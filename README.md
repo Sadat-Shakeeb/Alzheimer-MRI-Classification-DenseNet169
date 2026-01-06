@@ -59,12 +59,12 @@ dataset/
 
 
 
-🔹 Test Set Performance
+##🔹 Test Set Performance
 Test Accuracy: 83.37%
 Test AUC: 96.57%
 The strong alignment between validation and test AUC indicates good generalization.
 
-🔍 Single Image Inference Results
+##🔍 Single Image Inference Results
 | Test Case | True Class         | Prediction         | Confidence |
 | --------- | ------------------ | ------------------ | ---------- |
 | Case 1    | Non Demented       | Non Demented       | 83.36%     |
@@ -73,19 +73,19 @@ The strong alignment between validation and test AUC indicates good generalizati
 | Case 4    | Very Mild Demented | Very Mild Demented | 82.88%     |
 
 
-Interpretation:
-The model performs reliably for Non, Very Mild, and Mild Demented cases.
-The Moderate Demented class is challenging, primarily due to having MRI slices from only two subjects.
-The low confidence (36.4%) reflects model uncertainty rather than overconfident misclassification, which is desirable in medical AI.
+##Interpretation:
+- The model performs reliably for Non, Very Mild, and Mild Demented cases.
+- The Moderate Demented class is challenging, primarily due to having MRI slices from only two subjects.
+- The low confidence (36.4%) reflects model uncertainty rather than overconfident misclassification, which is desirable in medical AI.
 
-⚠️ Limitations
-Severe class imbalance at subject level, especially for Moderate Demented
-Slice-based learning does not capture full 3D anatomical context
-Softmax confidence scores are not calibrated medical probabilities
+⚠️ **Limitations**
+- Severe class imbalance at subject level, especially for Moderate Demented
+- Slice-based learning does not capture full 3D anatomical context
+- Softmax confidence scores are not calibrated medical probabilities
 
-📌 Key Takeaways
+##📌 Key Takeaways
 
-Transfer learning with DenseNet169 is effective for MRI-based dementia classification
-AUC is a more reliable metric than accuracy for imbalanced medical datasets
-Dataset quality and subject diversity are critical for clinical generalization
+- Transfer learning with DenseNet169 is effective for MRI-based dementia classification
+- AUC is a more reliable metric than accuracy for imbalanced medical datasets
+- Dataset quality and subject diversity are critical for clinical generalization
 
