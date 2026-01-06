@@ -50,7 +50,70 @@ dataset/
 ├── val/
 └── test/
 
+2️⃣ Data Preprocessing and Augmentation
 
+Images resized to 224 × 224
+
+Pixel normalization (rescale=1./255)
+
+Data augmentation applied only to training data:
+
+Rotation
+
+Zoom
+
+Horizontal and vertical flipping
+
+3️⃣ Model Architecture
+
+Base Model: DenseNet169 (ImageNet pretrained, include_top=False)
+
+Pooling: Global Average Pooling (GAP)
+
+Classifier Head:
+
+Dense layers with ReLU activation
+
+Batch Normalization
+
+Dropout for regularization
+
+Training Strategy:
+
+Initially freeze all DenseNet layers
+
+Fine-tune the last few layers for domain adaptation
+
+4️⃣ Model Training
+
+Optimizer: Adam
+
+Loss Function: Categorical Cross-Entropy
+
+Metrics Tracked:
+
+Accuracy
+
+AUC (Area Under ROC Curve)
+
+Callbacks:
+
+EarlyStopping (monitored on val_auc)
+
+ModelCheckpoint (saves best model based on val_auc)
+
+5️⃣ Model Evaluation
+
+Evaluation was performed on a held-out test set, never seen during training or validation.
+
+📊 Results and Performance
+🔹 Training & Validation (Last Epochs Summary)
+
+Training AUC ≈ 0.98
+
+Validation AUC peaked at 0.9675
+
+No significant gap between training and validation metrics → no overfitting
 
 
 
